@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="output.css" />
+    <style>
+      .onwen {
+        font-weight: bold;
+        background: linear-gradient(
+          to right,
+          #ff6b6b,
+          #feca57,
+          #48dbfb,
+          #ff9ff3
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: colorShift 4s ease-in-out infinite;
+      }
+
+      @keyframes colorShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      #add::backdrop,#modi::backdrop
+      {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px); /*safari*/
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div class="flex flex-row w-full">
+      <button
+        class="text-white font-extrabold text-[20px] bg-red-500 px-6 py-3 mt-1 rounded-2xl transition duration-300 hover:bg-red-600 hover:shadow-[0_0_30px_rgba(239,68,68,0.7)]"
+        onclick="opentask()"
+      >
+        +
+      </button>
+      <header class="onwen text-4xl ml-[45%] items-center justify-center">
+        ToDo List
+      </header>
+    </div>
+    <br /><br /><br /><br />
+    <div id="contenu" class="flex flex-col"></div>
+    <dialog id="add" class="m-auto bg-transparent w-150">
+      <form id="addform">
+        <h2 class="onwen text-center text-5xl">ADD</h2><br><br><br>
+        <div class="flex flex-col w-[90%] ml-5 space-y-2">
+          <label class="font-bold text-white text-[20px]"> Title:</label>
+          <input
+            class="border-4 border-pink-700 text-white"
+            type="text"
+            name="title"
+            id="title"
+            required
+          />
+        </div>
+        <br />
+
+        <br />
+
+        <div class="flex flex-col w-[90%] ml-5 space-y-2">
+          <label class="mb-10 font-bold text-white text-[20px]"> Description:</label>
+          <textarea
+            class="border-4 border-pink-700 text-white"
+            name="desc"
+            id="desc"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <br />
+        <div class="space-x-2">
+          <button
+            class="font-bold bg-pink-900 text-white rounded-md w-[30%] mb-1 pb-1 ml-17 hover:text-green-500 hover:bg-purple-950"
+            type="submit"
+          >
+            Add Task
+          </button>
+          <button
+            class="font-bold bg-pink-900 text-white rounded-md w-[30%] mb-1 pb-1 ml-17 hover:text-green-500 hover:bg-purple-950"
+            type="reset"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="modi" class="m-auto bg-transparent w-150">
+      <form id="modiform">
+        <h2 class="onwen text-center text-5xl">Modify</h2><br><br><br>
+        <div class="flex flex-col w-[90%] ml-5 space-y-2">
+          <input type="text" name="id" id="idm" hidden>
+          <label class="font-bold text-white text-[20px]"> Title:</label>
+          <input
+            class="border-4 border-pink-700 text-white"
+            type="text"
+            name="title"
+            id="titlem"
+            required
+          />
+        </div>
+        <br />
+
+        <br />
+
+        <div class="flex flex-col w-[90%] ml-5 space-y-2">
+          <label class="mb-10 font-bold text-white text-[20px]"> Description:</label>
+          <textarea
+            class="border-4 border-pink-700 text-white"
+            name="desc"
+            id="descm"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <br />
+        <div class="space-x-2">
+          <button
+            class="font-bold bg-pink-900 text-white rounded-md w-[30%] mb-1 pb-1 ml-17 hover:text-green-500 hover:bg-purple-950"
+            type="submit"
+          >
+            Modify Task
+          </button>
+          <button
+            class="font-bold bg-pink-900 text-white rounded-md w-[30%] mb-1 pb-1 ml-17 hover:text-green-500 hover:bg-purple-950"
+            type="reset"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
