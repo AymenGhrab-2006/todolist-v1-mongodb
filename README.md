@@ -48,8 +48,8 @@ Before running the project, install:
 Clone the repository and enter the project directory:
 
 ```bash
-git clone <your-repository-url>
-cd <project-directory>
+git clone https://github.com/AymenGhrab-2006/todolist-v1-mongodb.git
+cd todolist-v1-mongodb
 ```
 
 Install dependencies:
