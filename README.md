@@ -144,9 +144,9 @@ It will intentionally report that no tests are specified.
 
 ## Tailwind CSS
 
-`output.css` is the generated Tailwind stylesheet committed with the project.
+`output.css` is generated locally using the Tailwind CLI from `input.css`.
 
-If you want to rebuild the CSS during development, install/configure the Tailwind CLI and generate `output.css` from `input.css`.
+To rebuild the CSS during development, run your Tailwind build command.
 
 ## License
 
