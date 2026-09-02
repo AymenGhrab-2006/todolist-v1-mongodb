@@ -28,8 +28,7 @@ A simple full-stack ToDo List application built with **Node.js**, **Express**, *
 .
 ├── index.html       # Main UI
 ├── script.js        # Frontend logic and API calls
-├── input.css        # Tailwind source CSS
-├── output.css       # Generated Tailwind CSS
+├── input.css        # Tailwind source CSS (output.css is generated locally)
 ├── server.js        # Express server and MongoDB API
 ├── package.json     # Node.js dependencies and scripts
 ├── .gitignore
